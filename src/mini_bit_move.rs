@@ -1,3 +1,5 @@
+// https://www.codewars.com/kata/587c0138110b20624e000253
+
 fn interpreter(tape: &str, data: &str) -> String {
   let mut tape_it = tape.chars().cycle();
 

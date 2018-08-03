@@ -12,7 +12,6 @@
 // mod irr_sum_of_rationals;
 // mod last_digit_huge_number;
 // mod mini_bit_move;
-// mod morse_decoder;
 // mod moves_in_squared_strings;
 // mod pattern_zoom;
 // mod recover_secret_string;
@@ -22,4 +21,8 @@
 // mod starts_ends_with;
 // mod sum_of_pairs;
 // mod summy;
-mod word_order;
+// mod word_order;
+mod a_disguised_sequence;
+
+// This one has trouble because it uses a special class
+// mod morse_decoder;
