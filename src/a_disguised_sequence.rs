@@ -1,8 +1,8 @@
 // https://www.codewars.com/kata/a-disguised-sequence-i
 
-// After reducing on paper, this is just 2^n
+// After reducing on paper, this is just 2^n.  Shifting left is more efficient.
 fn fcn(n: i32) -> i64 {
-  2_i64.pow(n as u32)
+  1 << n
 }
 
 
