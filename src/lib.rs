@@ -22,7 +22,8 @@
 // mod sum_of_pairs;
 // mod summy;
 // mod word_order;
-mod a_disguised_sequence;
+// mod a_disguised_sequence;
+mod digital_cypher;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
