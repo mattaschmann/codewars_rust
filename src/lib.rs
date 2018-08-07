@@ -23,7 +23,8 @@
 // mod summy;
 // mod word_order;
 // mod a_disguised_sequence;
-mod digital_cypher;
+// mod digital_cypher;
+mod find_the_nth_digit;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
