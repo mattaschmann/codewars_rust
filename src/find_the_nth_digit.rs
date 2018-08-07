@@ -7,8 +7,8 @@ fn find_digit(num: i32, nth: i32) -> i32 {
            .rev()
            .skip(nth as usize - 1)
            .next() {
-             Some(n) => return n.to_digit(10).unwrap() as i32,
-             _ => return 0
+             Some(n) => n.to_digit(10).unwrap() as i32,
+             _ => 0
            }
 }
 
