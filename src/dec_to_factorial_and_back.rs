@@ -35,9 +35,14 @@ fn dec2_fact_string(nb: u64) -> String {
   result
 }
 
-// fn fact_string_2dec(s: String) -> u64 {
-//   // your code
-// }
+fn fact_string_2dec(s: String) -> u64 {
+  let map = HashMap::new();
+  s.chars()
+   .rev()
+   .enumerate()
+   .map(|(i, c)| factorial(i as u64, &map) * c.to_digit(10).unwrap() as u64)
+   .sum()
+}
 
 
 #[cfg(test)]
@@ -63,5 +68,11 @@ mod tests {
   fn test_dec2_fact_string() {
     assert_eq!(dec2_fact_string(2982), "4041000");
     assert_eq!(dec2_fact_string(463), "341010");
+  }
+
+  #[test]
+  fn test_fact_string_2dec() {
+    assert_eq!(fact_string_2dec("4041000".to_string()), 2982);
+    assert_eq!(fact_string_2dec("341010".to_string()), 463);
   }
 }
