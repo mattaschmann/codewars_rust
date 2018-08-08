@@ -49,7 +49,7 @@ fn fact_string_2dec(s: String) -> u64 {
   s.chars()
    .rev()
    .enumerate()
-   .map(|(i, c)| factorial(i as u64, &map) * c.to_digit(10).unwrap() as u64)
+   .map(|(i, c)| factorial(i as u64, &map) * ASCII_ARRAY.iter().position(|&x| c == x).unwrap() as u64)
    .sum()
 }
 
@@ -80,11 +80,12 @@ mod tests {
     assert_eq!(dec2_fact_string(36288000), "A0000000000");
   }
 
-  // #[test]
-  // fn test_fact_string_2dec() {
-  //   assert_eq!(fact_string_2dec("4041000".to_string()), 2982);
-  //   assert_eq!(fact_string_2dec("341010".to_string()), 463);
-  //   assert_eq!(fact_string_2dec("27A0533231100".to_string()), 463);
-  // }
+  #[test]
+  fn test_fact_string_2dec() {
+    assert_eq!(fact_string_2dec("4041000".to_string()), 2982);
+    assert_eq!(fact_string_2dec("341010".to_string()), 463);
+    assert_eq!(fact_string_2dec("A0000000000".to_string()), 36288000);
+    assert_eq!(fact_string_2dec("27A0533231100".to_string()), 1273928000);
+  }
 
 }
