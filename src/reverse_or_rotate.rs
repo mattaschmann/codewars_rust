@@ -4,13 +4,10 @@ fn revrot(s: &str, c: usize) -> String {
   let (cur, rest) = s.split_at(c);
   let sum: u32 = cur.chars().map(|c| c.to_digit(10).unwrap().pow(3)).sum();
 
-  let mut result;
-  if sum % 2 == 0 {
-    result = cur.chars().rev().collect();
-  } else {
-    result = String::from(&cur[1..]);
-    result.push(cur.chars().next().unwrap());
-  }
+  let result = match sum % 2  {
+    0 => cur.chars().rev().collect(),
+    _ => String::from(&cur[1..]) + &cur[0..1]
+  };
 
   result + &revrot(rest, c)
 }
