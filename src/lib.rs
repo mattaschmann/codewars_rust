@@ -25,7 +25,8 @@
 // mod a_disguised_sequence;
 // mod digital_cypher;
 // mod find_the_nth_digit;
-mod dec_to_factorial_and_back;
+// mod dec_to_factorial_and_back;
+mod reverse_or_rotate;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
