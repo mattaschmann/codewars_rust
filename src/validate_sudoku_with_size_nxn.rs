@@ -8,8 +8,9 @@ struct Sudoku {
 
 impl Sudoku {
   fn is_valid(&self) -> bool {
+    println!("data: {:?}", self.data);
     let size = self.data[0].len();
-    if size == 1 { return false }
+    if size == 0 { return false }
 
     let mut cols = HashMap::new();
 
@@ -19,6 +20,7 @@ impl Sudoku {
       let mut row = HashSet::new();
 
       v.iter().enumerate().all(|(i, n)| {
+        if n > &(size as u32) || n == &0 { return false }
         let col = cols.entry(i).or_insert(HashSet::new());
 
         if row.contains(n) || col.contains(n) {
@@ -108,17 +110,44 @@ mod tests {
         vec![2]
       ],
     };
+
     let bad_sudoku_5 = Sudoku {
       data: vec![
         vec![1, 2, 3, 4, 5, 6, 7, 8, 9]
       ],
     };
 
+    let bad_sudoku_6 = Sudoku {
+      data: vec![ vec![] ],
+    };
+
+    let bad_sudoku_7 = Sudoku {
+      data: vec![
+        vec![0]
+      ],
+    };
+
+    let bad_sudoku_8 = Sudoku {
+      data: vec![
+        vec![1, 2, 3, 4, 5, 6, 7, 8, 9],
+        vec![2, 3, 1, 5, 6, 4, 8, 9, 7],
+        vec![3, 1, 2, 6, 4, 5, 9, 7, 8],
+        vec![4, 5, 6, 7, 8, 9, 1, 2, 3],
+        vec![5, 6, 4, 8, 9, 7, 2, 3, 1],
+        vec![6, 4, 5, 9, 7, 8, 3, 1, 2],
+        vec![7, 8, 9, 1, 2, 3, 4, 5, 6],
+        vec![8, 9, 7, 2, 3, 1, 5, 6, 4],
+        vec![9, 7, 8, 3, 1, 2, 6, 4, 5]
+      ],
+    };
 
     assert!(!bad_sudoku_1.is_valid());
     assert!(!bad_sudoku_2.is_valid());
     assert!(!bad_sudoku_3.is_valid());
     assert!(!bad_sudoku_4.is_valid());
     assert!(!bad_sudoku_5.is_valid());
+    assert!(!bad_sudoku_6.is_valid());
+    assert!(!bad_sudoku_7.is_valid());
+    assert!(!bad_sudoku_8.is_valid());
   }
 }
