@@ -24,9 +24,10 @@ impl Sudoku {
       v.iter().enumerate().all(|(i, n)| {
         if n > &(size as u32) || n == &0 { return false }
 
-        // calculate which square we are in
-        let sq_num = (((i + 1) as f32 / sq_size).ceil() + (j as f32 / sq_size).floor() * 3_f32) as usize;
         let col = cols.entry(i).or_insert(HashSet::new());
+
+        // calculate which square we are in
+        let sq_num = ((i as f32 / sq_size).floor() + (j as f32 / sq_size).floor() * sq_size) as usize;
         let sq = squares.entry(sq_num).or_insert(HashSet::new());
 
         if row.contains(n) || col.contains(n) || sq.contains(n) {
