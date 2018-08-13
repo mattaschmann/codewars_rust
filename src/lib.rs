@@ -27,7 +27,8 @@
 // mod find_the_nth_digit;
 // mod dec_to_factorial_and_back;
 // mod reverse_or_rotate;
-mod validate_sudoku_with_size_nxn;
+// mod validate_sudoku_with_size_nxn;
+mod diophantine_equation;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
