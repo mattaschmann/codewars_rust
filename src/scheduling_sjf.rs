@@ -1,13 +1,14 @@
 // https://www.codewars.com/kata/scheduling-shortest-job-first-or-sjf
 
 fn sjf(jobs: &[usize], index: usize) -> usize {
-  let mut sum: usize = 0;
-  for (i, x) in jobs.iter().enumerate() {
-    if x < &jobs[index] { sum += *x }
-    if i <= index && x == &jobs[index] { sum += *x }
-  }
+  let cur = jobs[index];
 
-  sum
+  jobs
+    .iter()
+    .enumerate()
+    .filter(|&(i, x)| x < &cur || (i <= index && x == &cur))
+    .map(|(_, x)| x)
+    .sum()
 }
 
 
