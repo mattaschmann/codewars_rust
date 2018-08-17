@@ -1,3 +1,5 @@
+// http://www.codewars.com/kata/526571aae218b8ee490006f4
+
 fn count_bits(n: i64) -> u32 {
   format!("{:b}", n)
     .chars()
