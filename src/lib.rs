@@ -29,7 +29,8 @@
 // mod reverse_or_rotate;
 // mod validate_sudoku_with_size_nxn;
 // mod diophantine_equation;
-mod scheduling_sjf;
+// mod scheduling_sjf;
+mod bit_counting;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
