@@ -30,7 +30,8 @@
 // mod validate_sudoku_with_size_nxn;
 // mod diophantine_equation;
 // mod scheduling_sjf;
-mod bit_counting;
+// mod bit_counting;
+mod number_of_integer_partitions;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
