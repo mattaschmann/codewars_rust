@@ -1,20 +1,21 @@
 // https://www.codewars.com/kata/weight-for-weight
 
-fn order_weight(s: &str) -> String {
-  // @Matt TODO: current
-  let mut nums: Vec<String> = s
-    .split_whitespace()
-    .map(|n| {
-      let sum: u32 = n
-        .chars()
-        .map(|c| c.to_digit(10).unwrap())
-        .sum();
+use std::cmp::Ordering;
 
-      sum.to_string()
-    })
+fn order_weight(s: &str) -> String {
+  let weight = |x: &str| x.chars().map(|c| c.to_digit(10).unwrap()).sum::<u32>();
+
+  let mut nums: Vec<&str> = s
+    .split_whitespace()
     .collect();
 
-  nums.sort_unstable();
+  nums.sort_unstable_by(|a, b| {
+    let res = weight(a).cmp(&weight(b));
+    match res {
+      Ordering::Equal => a.cmp(b),
+      _ => res
+    }
+  });
   nums.join(" ")
 }
 
