@@ -6,7 +6,6 @@ fn array_diff<T: PartialEq>(a: Vec<T>, b: Vec<T>) -> Vec<T> {
    .collect()
 }
 
-
 #[cfg(test)]
 mod tests {
   use super::*;
