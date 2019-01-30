@@ -31,7 +31,8 @@
 // mod diophantine_equation;
 // mod scheduling_sjf;
 // mod bit_counting;
-mod weight_for_weight;
+// mod weight_for_weight;
+mod to_leet_speak;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
