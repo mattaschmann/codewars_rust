@@ -32,7 +32,8 @@
 // mod scheduling_sjf;
 // mod bit_counting;
 // mod weight_for_weight;
-mod to_leet_speak;
+// mod to_leet_speak;
+mod simple_beads_count;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
