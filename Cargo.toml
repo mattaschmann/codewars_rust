@@ -1,6 +1,6 @@
 [package]
 name = "codewars_rust"
 version = "0.1.0"
-authors = ["Matt Aschmann <maschmann@contractor.usgs.gov>"]
+authors = ["Matt Aschmann <matt.aschmann@gmail.com>"]
 
 [dependencies]
