@@ -35,7 +35,8 @@
 // mod to_leet_speak;
 // mod simple_beads_count;
 // mod coloured_triangles;
-mod target_date;
+// mod target_date;
+mod build_a_square;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
