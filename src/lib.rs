@@ -36,7 +36,8 @@
 // mod simple_beads_count;
 // mod coloured_triangles;
 // mod target_date;
-mod build_a_square;
+// mod build_a_square;
+mod duplicate_encoder;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
