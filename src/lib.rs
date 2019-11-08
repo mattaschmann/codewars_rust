@@ -37,7 +37,8 @@
 // mod coloured_triangles;
 // mod target_date;
 // mod build_a_square;
-mod duplicate_encoder;
+// mod duplicate_encoder;
+mod help_the_bookseller;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
