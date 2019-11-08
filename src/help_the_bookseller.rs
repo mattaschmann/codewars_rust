@@ -1,7 +1,9 @@
 // https://www.codewars.com/kata/54dc6f5a224c26032800005c
 
 fn stock_list(list_art: Vec<&str>, list_cat: Vec<&str>) -> String {
-  if list_art.len() == 0 { return "".to_string(); }
+  if list_art.is_empty() || list_cat.is_empty() {
+    return "".to_string();
+  }
 
   let mut catagory_map = std::collections::HashMap::new();
 
@@ -17,16 +19,7 @@ fn stock_list(list_art: Vec<&str>, list_cat: Vec<&str>) -> String {
 
   list_cat
     .iter()
-    .map(|c| {
-      format!(
-        "({} : {})",
-        c,
-        match catagory_map.get(c) {
-          Some(x) => x,
-          None => &0,
-        }
-      )
-    })
+    .map(|c| format!("({} : {})", c, catagory_map.get(c).unwrap_or(&0)))
     .collect::<Vec<String>>()
     .join(" - ")
 }
