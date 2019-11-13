@@ -39,7 +39,8 @@
 // mod build_a_square;
 // mod duplicate_encoder;
 // mod help_the_bookseller;
-mod bankers_plan;
+// mod bankers_plan;
+mod find_missing_letter;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
