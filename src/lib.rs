@@ -41,7 +41,8 @@
 // mod help_the_bookseller;
 // mod bankers_plan;
 // mod find_missing_letter;
-mod growth_of_population;
+// mod growth_of_population;
+mod categorize_new_member;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
