@@ -5,3 +5,4 @@ authors = ["Matt Aschmann <matt.aschmann@gmail.com>"]
 
 [dependencies]
 chrono = "0.4.9"
+itertools = "0.8.1"
