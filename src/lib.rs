@@ -43,7 +43,8 @@
 // mod find_missing_letter;
 // mod growth_of_population;
 // mod categorize_new_member;
-mod best_travel;
+// mod best_travel;
+mod camel_case_method;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
