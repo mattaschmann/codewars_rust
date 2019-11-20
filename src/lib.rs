@@ -44,7 +44,8 @@
 // mod growth_of_population;
 // mod categorize_new_member;
 // mod best_travel;
-mod camel_case_method;
+// mod camel_case_method;
+mod rectangle_into_squares;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
