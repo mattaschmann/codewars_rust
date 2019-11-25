@@ -47,7 +47,8 @@
 // mod camel_case_method;
 // mod rectangle_into_squares;
 // mod play_w_passphrases;
-mod cafeteria;
+// mod cafeteria;
+mod build_pile_cubes;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
