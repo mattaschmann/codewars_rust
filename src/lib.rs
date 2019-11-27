@@ -48,7 +48,8 @@
 // mod rectangle_into_squares;
 // mod play_w_passphrases;
 // mod cafeteria;
-mod build_pile_cubes;
+// mod build_pile_cubes;
+mod catalog;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
