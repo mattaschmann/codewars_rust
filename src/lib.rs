@@ -49,7 +49,8 @@
 // mod play_w_passphrases;
 // mod cafeteria;
 // mod build_pile_cubes;
-mod catalog;
+// mod catalog;
+mod num_int_partitions;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
