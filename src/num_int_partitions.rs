@@ -39,7 +39,7 @@ mod tests {
 
     #[test]
     fn basic_test_10() {
-        assert_eq!(partitions(10), 41);
+        assert_eq!(partitions(10), 42);
     }
 
     // #[test]
