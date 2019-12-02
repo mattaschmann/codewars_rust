@@ -15,13 +15,14 @@ fn part_helper(n: isize, largest: isize, map: &mut HashMap<(isize, isize), isize
 
     let key = &(n, largest);
 
-    if map.contains_key(key) {
-        *map.get(key).unwrap()
-    } else {
-        let res = part_helper(n, largest-1, map) + part_helper(n-largest, largest, map);
-        map.insert(*key, res);
+    match map.contains_key(key) {
+        true => *map.get(key).unwrap(),
+        false => {
+            let res = part_helper(n, largest-1, map) + part_helper(n-largest, largest, map);
+            map.insert(*key, res);
 
-        res
+            res
+        }
     }
 }
 
