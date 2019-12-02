@@ -1,35 +1,28 @@
 // https://www.codewars.com/kata/546d5028ddbcbd4b8d001254
 
+use std::collections::HashMap;
+
 fn partitions(n: isize) -> isize {
-    let mut combo = vec![n];
-    let mut count = 1;
+    let mut map = HashMap::new();
 
-    while combo.first().unwrap() != &1 {
-        while combo.last().unwrap() == &1 {
-            combo.pop();
-        }
+    part_helper(n, n, &mut map)
+}
 
-        let mut temp = combo.pop().unwrap();
-        temp -= 1;
-        combo.push(temp);
+fn part_helper(n: isize, largest: isize, map: &mut HashMap<(isize, isize), isize>) -> isize {
+    if largest == 0 { return 0; }
+    if n == 0 { return 1; }
+    if n < 0 { return 0; }
 
-        if temp > 1 {
-            let mut rem: isize = n - combo.iter().sum::<isize>();
+    let key = &(n, largest);
 
-            while rem > temp {
-                combo.push(temp);
-                rem -= temp;
-            }
+    if map.contains_key(key) {
+        *map.get(key).unwrap()
+    } else {
+        let res = part_helper(n, largest-1, map) + part_helper(n-largest, largest, map);
+        map.insert(*key, res);
 
-            combo.push(rem);
-        }
-
-        count += 1;
-
-        println!("{:?}", combo);
+        res
     }
-
-    count
 }
 
 #[cfg(test)]
@@ -57,8 +50,18 @@ mod tests {
     // }
 
     // #[test]
-    // fn basic_test_100() {
-    //     assert_eq!(partitions(100), 1958);
+    // fn basic_test_50() {
+    //     assert_eq!(partitions(50), 204226);
     // }
+
+    // #[test]
+    // fn basic_test_75() {
+    //     assert_eq!(partitions(75), 204226);
+    // }
+
+    #[test]
+    fn basic_test_100() {
+        assert_eq!(partitions(100), 1958);
+    }
 
 }
