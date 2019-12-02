@@ -8,8 +8,9 @@ fn partitions(n: isize) -> isize {
 
     let mut sum = 2;
 
-    for i in 1..n {
-        let combos = (1..n)
+    for i in 2..n {
+        let combos = (1..n - (i - 2))
+            .rev()
             .combinations_with_replacement(i as usize)
             .filter(|v| v.iter().sum::<isize>() == n)
             .collect::<Vec<Vec<isize>>>();
@@ -38,7 +39,7 @@ mod tests {
 
     #[test]
     fn basic_test_10() {
-        assert_eq!(partitions(10), 42);
+        assert_eq!(partitions(10), 41);
     }
 
     // #[test]
