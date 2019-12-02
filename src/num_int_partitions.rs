@@ -4,23 +4,33 @@ extern crate itertools;
 use self::itertools::Itertools;
 
 fn partitions(n: isize) -> isize {
-    if n == 1 { return 1; }
+    let mut combo = vec![n];
+    let mut count = 1;
 
-    let mut sum = 2;
+    while combo.first().unwrap() != &1 {
+        while combo.last().unwrap() == &1 {
+            combo.pop();
+        }
 
-    for i in 2..n {
-        let combos = (1..n - (i - 2))
-            .rev()
-            .combinations_with_replacement(i as usize)
-            .filter(|v| v.iter().sum::<isize>() == n)
-            .collect::<Vec<Vec<isize>>>();
+        let mut temp = combo.pop().unwrap();
+        temp -= 1;
+        combo.push(temp);
 
-        println!("{:?}", combos);
+        let mut rem: isize = n - combo.iter().sum::<isize>();
 
-        sum += combos.len() as isize;
+        println!("{}", rem);
+        while rem > temp {
+            combo.push(temp);
+            rem -= temp;
+        }
+
+        combo.push(rem);
+        count += 1;
+
+        println!("{:?}", combo);
     }
 
-    sum
+    count
 }
 
 #[cfg(test)]
@@ -42,9 +52,14 @@ mod tests {
         assert_eq!(partitions(10), 42);
     }
 
+    #[test]
+    fn basic_test_25() {
+        assert_eq!(partitions(25), 1958);
+    }
+
     // #[test]
-    // fn basic_test_25() {
-    //     assert_eq!(partitions(25), 1958);
+    // fn basic_test_100() {
+    //     assert_eq!(partitions(100), 1958);
     // }
 
 }
