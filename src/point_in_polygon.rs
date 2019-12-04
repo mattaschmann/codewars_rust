@@ -4,16 +4,11 @@ type Point = (f32, f32);
 
 // ref: https://rosettacode.org/wiki/Ray-casting_algorithm
 fn point_in_poly(poly: &[Point], point: Point) -> bool {
-  println!("{:?}", poly);
-  println!("{:?}", point);
-
   // need to pop the first onto the end
   let looped_poly = [poly, &[*poly.first().unwrap()]].concat();
 
   looped_poly.windows(2)
     .fold(false, |inside, x| {
-      println!("inside {:?}", inside);
-      println!("x {:?}", x);
       if let [a, b] = x {
         match point_intersects(point, a, b) {
           true => return !inside,
@@ -31,8 +26,6 @@ fn point_intersects(p: Point, a: &Point, b: &Point) -> bool {
     false => (b, a)
   };
 
-  println!("l h p {:?} {:?} {:?}", lower, higher, p);
-
   // check the simple cases
   // is it between y's?
   if p.1 < lower.1 || p.1 > higher.1 { return false; }
@@ -44,9 +37,6 @@ fn point_intersects(p: Point, a: &Point, b: &Point) -> bool {
   // check the slopes
   let edge_slope = (higher.1 - lower.1)/(higher.0 - lower.0);
   let p_slope = (p.1 - lower.1)/(p.0 - lower.0);
-
-  println!("slopes {:?} {:?}", p_slope, edge_slope);
-  println!("slope greater {:?}", p_slope > edge_slope);
 
   p_slope >= edge_slope
 }
