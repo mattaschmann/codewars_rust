@@ -51,7 +51,8 @@
 // mod build_pile_cubes;
 // mod catalog;
 // mod num_int_partitions;
-mod point_in_polygon;
+// mod point_in_polygon;
+mod get_along_int_partitions;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
