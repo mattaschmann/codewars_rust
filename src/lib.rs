@@ -52,7 +52,8 @@
 // mod catalog;
 // mod num_int_partitions;
 // mod point_in_polygon;
-mod get_along_int_partitions;
+// mod get_along_int_partitions;
+mod sum_by_factors;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
