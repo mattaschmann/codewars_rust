@@ -1,11 +1,11 @@
 // https://www.codewars.com/kata/54d496788776e49e6b00052f
 
-use std::collections::{HashMap, HashSet};
+use std::collections::{BTreeMap, HashSet};
 
 fn sum_of_divided(l: Vec<i64>) -> Vec<(i64, i64)> {
   println!("l = {:?}", l);
 
-  let mut map = HashMap::new();
+  let mut map = BTreeMap::new();
 
   // ref: https://www.geeksforgeeks.org/print-all-prime-factors-of-a-given-number/
   for n in l {
@@ -36,11 +36,7 @@ fn sum_of_divided(l: Vec<i64>) -> Vec<(i64, i64)> {
 
   println!("map = {:?}", map);
 
-  let mut res: Vec<(i64, i64)> = map.iter().map(|(k, set)| (*k, set.iter().sum())).collect();
-
-  res.sort();
-
-  res
+  map.iter().map(|(k, set)| (*k, set.iter().sum())).collect()
 }
 
 #[cfg(test)]
