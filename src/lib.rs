@@ -55,7 +55,8 @@
 // mod get_along_int_partitions;
 // mod sum_by_factors;
 // mod primes_in_numbers;
-mod buying_a_car;
+// mod buying_a_car;
+mod backwards_read_primes;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
