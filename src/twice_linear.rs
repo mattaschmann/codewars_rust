@@ -45,6 +45,5 @@ mod tests {
     testing(30, 91);
     testing(50, 175);
     testing(100, 447);
-    testing(3000, 447);
   }
 }
