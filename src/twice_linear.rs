@@ -8,7 +8,7 @@ fn dbl_linear(n: u32) -> u32 {
   let mut u = BTreeSet::new();
   u.insert(1);
 
-  for i in 0..n as usize {
+  for i in 0..(n-(n/3)) as usize {
     let temp = u.clone();
     let x = temp.iter().nth(i).unwrap();
 
@@ -23,6 +23,7 @@ fn dbl_linear(n: u32) -> u32 {
 mod tests {
   use super::dbl_linear;
   fn testing(n: u32, exp: u32) -> () {
+    time_test!(format!("{}", n));
     assert_eq!(dbl_linear(n), exp)
   }
 
@@ -33,6 +34,6 @@ mod tests {
     testing(30, 91);
     testing(50, 175);
     testing(100, 447);
-    testing(10000, 447);
+    testing(3000, 447);
   }
 }

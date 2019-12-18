@@ -1,3 +1,6 @@
+#[macro_use]
+extern crate time_test;
+
 #[allow(dead_code)]
 
 // mod array_diff;
