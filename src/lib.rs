@@ -56,7 +56,8 @@
 // mod sum_by_factors;
 // mod primes_in_numbers;
 // mod buying_a_car;
-mod backwards_read_primes;
+// mod backwards_read_primes;
+mod twice_linear;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
