@@ -9,8 +9,7 @@ fn dbl_linear(n: u32) -> u32 {
   u.insert(1);
 
   for i in 0..(n-(n/3)) as usize {
-    let temp = u.clone();
-    let x = temp.iter().nth(i).unwrap();
+    let x = *u.iter().nth(i).unwrap();
 
     u.insert(2*x+1);
     u.insert(3*x+1);
@@ -23,7 +22,7 @@ fn dbl_linear(n: u32) -> u32 {
 mod tests {
   use super::dbl_linear;
   fn testing(n: u32, exp: u32) -> () {
-    time_test!(format!("{}", n));
+    time_test!(n);
     assert_eq!(dbl_linear(n), exp)
   }
 
