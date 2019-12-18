@@ -1,21 +1,33 @@
 // https://www.codewars.com/kata/twice-linear
 
-use std::collections::BTreeSet;
+use std::collections::HashSet;
 
 fn dbl_linear(n: u32) -> u32 {
-  if n == 0 { return 1; }
+  let mut x_index = 0;
+  let mut y_index = 0;
 
-  let mut u = BTreeSet::new();
-  u.insert(1);
+  let mut u = vec![1];
+  let mut cache = HashSet::new();
+  cache.insert(1);
 
-  for i in 0..(n-(n/3)) as usize {
-    let x = *u.iter().nth(i).unwrap();
+  while u.len() < (n+1) as usize {
+    let x = u[x_index] * 2 + 1;
+    let y = u[y_index] * 3 + 1;
 
-    u.insert(2*x+1);
-    u.insert(3*x+1);
+    match x < y {
+      true => {
+        x_index += 1;
+        if cache.insert(x) { u.push(x); }
+      },
+      _ => {
+        y_index += 1;
+        if cache.insert(y) { u.push(y); }
+      }
+    }
+
   }
 
-  *u.iter().nth(n as usize).unwrap()
+  *u.last().unwrap()
 }
 
 #[cfg(test)]
