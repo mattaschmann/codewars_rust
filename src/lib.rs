@@ -60,7 +60,8 @@ extern crate time_test;
 // mod primes_in_numbers;
 // mod buying_a_car;
 // mod backwards_read_primes;
-mod twice_linear;
+// mod twice_linear;
+mod highest_scoring_word;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
