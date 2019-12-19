@@ -1,5 +1,5 @@
-#[macro_use]
-extern crate time_test;
+// #[macro_use]
+// extern crate time_test;
 
 #[allow(dead_code)]
 
@@ -61,7 +61,8 @@ extern crate time_test;
 // mod buying_a_car;
 // mod backwards_read_primes;
 // mod twice_linear;
-mod highest_scoring_word;
+// mod highest_scoring_word;
+mod range_execution;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
