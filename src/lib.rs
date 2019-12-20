@@ -63,7 +63,8 @@
 // mod twice_linear;
 // mod highest_scoring_word;
 // mod range_execution;
-mod simple_sub_cipher_helper;
+// mod simple_sub_cipher_helper;
+mod ball_upwards;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
