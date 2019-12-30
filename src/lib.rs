@@ -1,5 +1,5 @@
-// #[macro_use]
-// extern crate time_test;
+// #[macro_use] extern crate time_test;
+#[macro_use] extern crate common_macros;
 
 #[allow(dead_code)]
 
@@ -65,7 +65,8 @@
 // mod range_execution;
 // mod simple_sub_cipher_helper;
 // mod ball_upwards;
-mod color_choice;
+// mod color_choice;
+mod help_granny;
 
 // This one has trouble because it uses a special class
 // mod morse_decoder;
